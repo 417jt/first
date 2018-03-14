@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document xmlns="urn:cnaps:std:ibps:2010:tech:xsd:ibps.305.001.01">
+	<TxStsReq>
+		<GrpHdr>
+			<MsgId>3136140000122016062900715459</MsgId>
+			<CreDtTm>2016-06-29T05:00:13</CreDtTm>
+		</GrpHdr>
+		<InstgPty>313614000012</InstgPty>
+		<InstdPty>0000</InstdPty>
+		<TxStsInf>
+			<OrgnlGrpInf>
+				<OrgnlSndrId>313614000012</OrgnlSndrId>
+				<OrgnlMsgId>3136140000122015021600268121</OrgnlMsgId>
+			</OrgnlGrpInf>
+			<OrgnlMsgTp>ibps.101.001.01</OrgnlMsgTp>
+			<OrgnlTxTpCd>C200</OrgnlTxTpCd>
+		</TxStsInf>
+		<DgtSgntr>nMh/G444lMQHnmIrP42RtCbYxPKlTxaFyBF894OlNcdREXcZzmjz9NGHSGae0+bb
+			ffN0DY2Vxd+rF79t7NiDf3wgYOmlkqbesZtSAeYbzeJoQ2LcsorsntDf9f/Kng+C
+			WCF/GqFQ/PQQn0wJkW80B2I+Grj6HYbvpTERmiitt/E=
+		</DgtSgntr>
+	</TxStsReq>
+</Document>

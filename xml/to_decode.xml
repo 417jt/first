@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- version="2.1" -->
+<configuration>
+	<appender name="console.debug.out" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+	<appender name="console.info.out" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+	<appender name="console.warn.out" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.err</target>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+	<appender name="console.error.out" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.err</target>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.project.debug" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name}}.log</file>
+		<append>true</append>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.project.warn" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-warn.log</file>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.project.error" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-error.log</file>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] [%c] %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.performance.log" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-perf.log</file>
+		<append>true</append>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.jvm.log" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-jvm.log</file>
+		<append>true</append>
+		<encoder>
+			<Pattern>%m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.drop.log" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-drop.log</file>
+		<append>true</append>
+		<encoder>
+			<Pattern>%m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dp.ds.log" class="ch.qos.logback.core.FileAppender">
+		<file>{{ datasource.log_dir }}/{{ log_name }}-ds.log</file>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+		<encoder>
+			<Pattern>[%d{yyyy-MM-dd HH:mm:ss}] level=%-p type=pcap tags=nodata message="%m"%n</Pattern>
+		</encoder>
+	</appender>
+
+	<logger name="perf">
+		<level value="debug" />
+		<appender-ref ref="dp.performance.log" />
+	</logger>
+
+	<logger name="jvm">
+		<level value="debug" />
+		<appender-ref ref="dp.jvm.log" />
+	</logger>
+
+	<logger name="drop">
+		<level value="debug" />
+		<appender-ref ref="dp.drop.log" />
+	</logger>
+
+	<logger name="ds">
+		<level value="warn" />
+		<appender-ref ref="dp.ds.log" />
+	</logger>
+
+	<root level="DEBUG">
+		<!-- <appender-ref ref="console.debug.out" /> 
+                <appender-ref ref="console.info.out" /> 
+                <appender-ref ref="console.warn.out" /> -->
+		<appender-ref ref="console.error.out" />
+
+		<appender-ref ref="dp.project.debug" />
+		<appender-ref ref="dp.project.warn" />
+		<appender-ref ref="dp.project.error" />
+	</root>
+</configuration>
