@@ -1,23 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Document xmlns="urn:cnaps:std:ibps:2010:tech:xsd:ibps.305.001.01">
-	<TxStsReq>
-		<GrpHdr>
-			<MsgId>3136140000122016062900715459</MsgId>
-			<CreDtTm>2016-06-29T05:00:13</CreDtTm>
-		</GrpHdr>
-		<InstgPty>313614000012</InstgPty>
-		<InstdPty>0000</InstdPty>
-		<TxStsInf>
-			<OrgnlGrpInf>
-				<OrgnlSndrId>313614000012</OrgnlSndrId>
-				<OrgnlMsgId>3136140000122015021600268121</OrgnlMsgId>
-			</OrgnlGrpInf>
-			<OrgnlMsgTp>ibps.101.001.01</OrgnlMsgTp>
-			<OrgnlTxTpCd>C200</OrgnlTxTpCd>
-		</TxStsInf>
-		<DgtSgntr>nMh/G444lMQHnmIrP42RtCbYxPKlTxaFyBF894OlNcdREXcZzmjz9NGHSGae0+bb
-			ffN0DY2Vxd+rF79t7NiDf3wgYOmlkqbesZtSAeYbzeJoQ2LcsorsntDf9f/Kng+C
-			WCF/GqFQ/PQQn0wJkW80B2I+Grj6HYbvpTERmiitt/E=
-		</DgtSgntr>
-	</TxStsReq>
-</Document>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Document xmlns="urn:cnaps:std:beps:2010:tech:xsd:beps.121.001.01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <CstmrCdtTrf>
+    <PKGGrpHdr>
+      <MsgId>2017092610844871</MsgId>
+      <CreDtTm>2017-09-26T11:16:25</CreDtTm>
+      <InstgPty>
+        <InstgDrctPty>103100000026</InstgDrctPty>
+      </InstgPty>
+      <InstdPty>
+        <InstdDrctPty>102100099996</InstdDrctPty>
+      </InstdPty>
+      <NbOfTxs>2</NbOfTxs>
+      <CtrlSum Ccy="CNY">13.00</CtrlSum>
+      <SysCd>BEPS</SysCd>
+      <Rmk>0</Rmk>
+    </PKGGrpHdr>
+    <NPCPrcInf>
+      <PrcSts>PR03</PrcSts>
+      <PrcCd>NEZI0000</PrcCd>
+      <NetgDt>2017-09-26</NetgDt>
+      <NetgRnd>01</NetgRnd>
+      <RcvTm>2017-09-26T11:25:16</RcvTm>
+      <TrnsmtTm>2017-09-26T11:25:16</TrnsmtTm>
+    </NPCPrcInf>
+    <CstmrCdtTrfInf>
+      <TxId>2017092613480036</TxId>
+      <Dbtr>
+        <Nm>���ĺ跲����ݸ����������������</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <Othr>
+            <Id>04149101040020735</Id>
+            <Issr>103161014918</Issr>
+          </Othr>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <BrnchId>
+          <Id>103161014918</Id>
+        </BrnchId>
+      </DbtrAgt>
+      <CdtrAgt>
+      </CdtrAgt>
+      </CstmrCdtTrfInf>
+      </CstmrCdtTrf>
+      </Document>
+      
