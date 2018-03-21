@@ -1,4 +1,4 @@
-package test.fileio;
+/*package test.fileio;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
@@ -69,7 +69,7 @@ public class FileIOTest {
     
     public static void write(String url) {
         
-       /* try {
+        try {
             String file = "src/test/fileio/urls.txt";
             BufferedWriter bw = new BufferedWriter(new FileWriter(file,true));
               bw.append((CharSequence)url);
@@ -79,7 +79,7 @@ public class FileIOTest {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
-        }*/
+        }
         
         try {
             String file = "src/test/fileio/urls.txt";
@@ -97,3 +97,4 @@ public class FileIOTest {
     }
 
 }
+*/
