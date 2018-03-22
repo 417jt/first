@@ -31,6 +31,13 @@ public class Crawler extends Thread {
             }
             if (url != null && !"".equals(url)) {
                 execute(url);
+                try {
+                    Thread.sleep((long)Math.random()*10 +10);
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    e.printStackTrace();
+                }
+                
             }
         }
     }
