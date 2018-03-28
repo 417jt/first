@@ -1,6 +1,5 @@
-package test.fileio;
+package first.fileio;
 
-import static org.hamcrest.CoreMatchers.containsString;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

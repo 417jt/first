@@ -1,9 +1,9 @@
-package test.fileio;
+package first.fileio;
 
 import java.util.LinkedList;
 
 public class InitialURLS {
-    public static LinkedList<String> urlQueue = new LinkedList<>();
+    public static LinkedList<String> urlQueue = new LinkedList<String>();
     public static final int max_deep = 10;
     static {
         urlQueue.add("https://www.baidu.com/");

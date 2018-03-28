@@ -1,4 +1,4 @@
-package test.mapbuffer;
+package first.mapbuffer;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
