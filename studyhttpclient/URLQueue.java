@@ -1,4 +1,4 @@
-package studyhttpclient;
+package first.studyhttpclient;
 
 import java.net.URL;
 import java.util.LinkedList;
