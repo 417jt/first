@@ -1,4 +1,4 @@
-package test.fileio;
+package first.fileio;
 
 public class HashUtil {
     private int size;

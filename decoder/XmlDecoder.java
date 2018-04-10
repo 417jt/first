@@ -1,4 +1,4 @@
-package test.decoder;
+package first.decoder;
 
 import java.io.File;
 import java.util.Iterator;

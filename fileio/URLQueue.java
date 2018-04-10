@@ -1,11 +1,11 @@
-package test.fileio;
+package first.fileio;
 
 import java.util.LinkedList;
 
 public class URLQueue {
     
     
-    public  LinkedList<String> urlQueue = new LinkedList<>();
+    public  LinkedList<String> urlQueue = new LinkedList<String>();
     public  final int max_deep = 10;
     
      public URLQueue (String url) {

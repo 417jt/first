@@ -1,10 +1,12 @@
-package test.fileio;
+package first.fileio;
 
-import static org.hamcrest.CoreMatchers.nullValue;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.RandomAccessFile;
 import java.util.LinkedList;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -26,7 +28,7 @@ public class Crawler extends Thread {
 
             String url = urlQueue.getURL();
             count++;
-            if (count > 10) {
+            if (count > 3) {
                 break;
             }
             if (url != null && !"".equals(url)) {
@@ -44,13 +46,20 @@ public class Crawler extends Thread {
 
 public  void execute(String url) {
             try {
-                Document doc = Jsoup.connect(url).get();
+                Connection conn = Jsoup.connect(url).userAgent(UserAgents.getRandomAgent());
+                Connection.Response resp = conn.execute();
+                String html = resp.body();
+                //System.out.println(html);
+                
+                Document doc = resp.parse();
+                System.out.println(doc.text());
                 Elements elements = doc.getElementsByTag("a");
                 for(Element element : elements) {
                     String newUrl = element.attr("href");
                     if (!newUrl.startsWith("http")) {
                         continue;
                     }
+                   // System.out.println(newUrl);
                     write(newUrl);
                     urlQueue.addURL(newUrl);
                     BloomFilter.add(newUrl);
@@ -62,14 +71,25 @@ public  void execute(String url) {
         }
 
     public  void write(String url) {
-        try {
-            String file = "src/test/fileio/urls.txt";
+       /* try {
+            String file = "src/main/resources/urls.txt";
             RandomAccessFile ra = new RandomAccessFile(file, "rw");
             ra.seek(ra.length());
             ra.writeBytes(url);
             ra.writeBytes(line_separator);
             ra.close();
 
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }*/
+    	try {
+            String file = "src/main/resources/urls.txt";
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file,true));
+              bw.append((CharSequence)url);
+              bw.newLine();
+              bw.close();
+            
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
